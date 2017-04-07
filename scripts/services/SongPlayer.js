@@ -34,10 +34,11 @@
 /**
  * @function playSong
  * @desc Sets currentBuzzObject to play and song value to true
+ * @param {Object} song
  */      
-    var playSong = function() {
+    var playSong = function(song) {
       currentBuzzObject.play();
-      song.playing = true;
+      currentSong.playing = true;
     }
     
  /**
@@ -49,7 +50,7 @@
     SongPlayer.play = function(song) {
      if (currentSong !== song) {
          setSong(song);
-         playSong();
+         playSong(song);
      } else if (currentSong === song) {
          if (currentBuzzObject.isPaused()) {
              currentBuzzObject.play();
