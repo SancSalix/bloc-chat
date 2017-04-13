@@ -32,8 +32,17 @@
 		var getSongIndex = function (song) {
 			return currentAlbum.songs.indexOf(song);
 		};
-
-		SongPlayer.currentSong = null;
+      
+        SongPlayer.currentSong = null;
+      
+        var songLoad = function () {
+          song = currentAlbum.songs[0];
+          setSong(song);
+          currentBuzzObject.pause();
+		  song.playing = false;
+        }; 
+      
+        songLoad();
 
 		SongPlayer.play = function (song) {
 			song = song || SongPlayer.currentSong;
@@ -45,6 +54,7 @@
 					playSong(song);
 				}
 			}
+          console.log(SongPlayer.currentSong);
 		};
 
 		SongPlayer.pause = function (song) {
