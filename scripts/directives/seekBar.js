@@ -5,10 +5,15 @@
       var offsetX = event.pageX - seekBar.offset().left;
       var seekBarWidth = seekBar.width();
       var offsetXPercent = offsetX / seekBarWidth;
-      offsetXPercent = Math.max(0, offsetXPercent);
-      offsetXPercent = Math.min(1, offsetXPercent);
+      offsetXPercent = Math.min(1, (Math.max(0, offsetXPercent)));
       return offsetXPercent;
     };
+
+    var percentString = function (value, max) {
+      var percent = value / max * 100;
+      return percent + '%';
+    }
+
 
     return {
       templateUrl: '/templates/directives/seek_bar.html',
@@ -20,7 +25,6 @@
       link: function (scope, element, attributes) {
         scope.value = 0;
         scope.max = 100;
-
         var seekBar = $(element);
 
         attributes.$observe('value', function (newValue) {
@@ -31,16 +35,11 @@
           scope.max = newValue;
         });
 
-        var percentString = function () {
-          var value = scope.value;
-          var max = scope.max;
-          var percent = value / max * 100;
-          return percent + '%';
-        };
+        percentString(scope.value, scope.max);
 
         scope.fillStyle = function () {
           return {
-            width: percentString()
+            width: percentString(scope.value, scope.max)
           };
         };
 
@@ -75,11 +74,9 @@
 
         scope.thumbStyle = function () {
           return {
-            left: percentString()
+            left: percentString(scope.value, scope.max)
           };
         };
-
-
       }
     };
   }

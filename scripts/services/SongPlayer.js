@@ -41,6 +41,15 @@
 
     SongPlayer.currentSong = null;
     SongPlayer.currentTime = null;
+    
+    var songLoad = function () {
+          song = currentAlbum.songs[0];
+          setSong(song);
+          currentBuzzObject.pause();
+		  song.playing = false;
+        }; 
+      
+        songLoad();
 
     SongPlayer.play = function (song) {
       song = song || SongPlayer.currentSong;
