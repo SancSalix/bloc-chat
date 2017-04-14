@@ -112,7 +112,7 @@
 
     currentBuzzObject.bind('volumechange', function () {
         $rootScope.$apply(function () {
-          SongPlayer.currentVolume = currentBuzzObject.setVolume();
+          SongPlayer.currentVolume = currentBuzzObject.getVolume();
         });
       });
 
