@@ -14,7 +14,6 @@
       return percent + '%';
     }
 
-
     return {
       templateUrl: '/templates/directives/seek_bar.html',
       replace: true,
@@ -37,6 +36,14 @@
 
         percentString(scope.value, scope.max);
 
+        var notifyOnChange = function (newValue) {
+            if (typeof scope.onChange === 'function') {
+              scope.onChange({
+                value: newValue
+              });
+            }
+          };
+
         scope.fillStyle = function () {
           return {
             width: percentString(scope.value, scope.max)
@@ -57,14 +64,6 @@
               notifyOnChange(scope.value);
             });
           });
-
-          var notifyOnChange = function (newValue) {
-            if (typeof scope.onChange === 'function') {
-              scope.onChange({
-                value: newValue
-              });
-            }
-          };
 
           $document.bind('mouseup.thumb', function () {
             $document.unbind('mousemove.thumb');

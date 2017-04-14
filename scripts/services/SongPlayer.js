@@ -41,15 +41,17 @@
 
     SongPlayer.currentSong = null;
     SongPlayer.currentTime = null;
-    
+    SongPlayer.currentVolume = 80;
+    SongPlayer.maxVolume = 100;
+
     var songLoad = function () {
-          song = currentAlbum.songs[0];
-          setSong(song);
-          currentBuzzObject.pause();
-		  song.playing = false;
-        }; 
-      
-        songLoad();
+      song = currentAlbum.songs[0];
+      setSong(song);
+      currentBuzzObject.pause();
+      song.playing = false;
+    };
+
+    songLoad();
 
     SongPlayer.play = function (song) {
       song = song || SongPlayer.currentSong;
@@ -98,6 +100,21 @@
         currentBuzzObject.setTime(time);
       }
     };
+
+
+    SongPlayer.setVolume = function (volume) {
+      if (currentBuzzObject) {
+        volume = parseInt(volume);
+        currentBuzzObject.setVolume(volume);
+        console.log(volume);
+      }
+    };
+
+    currentBuzzObject.bind('volumechange', function () {
+        $rootScope.$apply(function () {
+          SongPlayer.currentVolume = currentBuzzObject.setVolume();
+        });
+      });
 
     return SongPlayer;
   }
