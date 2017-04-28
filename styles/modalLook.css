@@ -1,0 +1,15 @@
+.modal-container {
+  position: absolute;
+  z-index: -2;
+  background-color: white;
+  color: #006666;
+  text-align: center;
+  margin-left: 30%;
+  margin-top: 75px;
+  top: 100px;
+}
+
+.modal-body {
+  position: relative;
+  display: inline-block;
+}

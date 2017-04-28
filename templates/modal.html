@@ -1,0 +1,15 @@
+<div class="modal-container">
+    <div class="modal-header">
+        <h3 class="modal-body text-center">Create new room</h3>
+    </div>
+    <div class="modal-body">
+        <div class="form-group modal-input">
+            <label for="newRoomName">Enter a room name</label>
+            <input id="newRoomName" type="text" ng-model="name">
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="button create" type="button" ng-click="modal.create(name)">Create Room</button>
+        <button class="button cancel" type="button" ng-click="$dismiss()">Cancel</button>
+    </div>
+</div>
