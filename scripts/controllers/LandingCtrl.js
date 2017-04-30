@@ -1,6 +1,7 @@
 (function() {
-  function LandingCtrl($rootScope, $scope, Room, $uibModal) {
+  function LandingCtrl($rootScope, Message, $scope, Room, $uibModal) {
     this.rooms = Room.all;
+    this.currentRoom = null;
 
     this.open = function() {
       $rootScope.modalInstance = $uibModal.open({
@@ -16,9 +17,7 @@
     };
 
 
-  }
-
   angular
     .module('blocChat')
-    .controller('LandingCtrl', ['$rootScope', '$scope', 'Room', '$uibModal', LandingCtrl]);
+    .controller('LandingCtrl', ['$rootScope', '$scope', 'Room', 'Message', '$uibModal', LandingCtrl]);
 })();

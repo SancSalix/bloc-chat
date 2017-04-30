@@ -6,11 +6,6 @@
         requireBase: false
       });
     $stateProvider
-      .state('modal', {
-        url: '/add',
-        controller: 'ModalCtrl as modal',
-        templateUrl: '/templates/modalLook.html'
-      })
       .state('landing', {
         url: '/',
         controller: 'LandingCtrl as landing',
