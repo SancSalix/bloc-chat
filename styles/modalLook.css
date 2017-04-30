@@ -1,8 +1,9 @@
 .modal-container {
   position: absolute;
   z-index: -2;
-  background-color: white;
-  color: #006666;
+  background-color: #006666;
+  color: white;
+  width: 20%;
   text-align: center;
   margin-left: 30%;
   margin-top: 75px;
@@ -12,4 +13,11 @@
 .modal-body {
   position: relative;
   display: inline-block;
+}
+
+button {
+  border: none;
+  text-decoration: none;
+  background-color: #009999;
+  color: white;
 }
