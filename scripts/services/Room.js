@@ -8,10 +8,7 @@
     return {
       all: rooms,
       addRoom: function(input) {
-        var newRoom = {};
-        var number = rooms.length + 1;
-        newRoom[number] = input;
-        rooms.$add(newRoom[number]);
+        rooms.$add({ name: input });
       },
       getMessagesById: function(activeRoomId){
                 return $firebaseArray(messageRef.orderByChild("roomId").equalTo(activeRoomId));
