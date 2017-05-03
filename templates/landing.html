@@ -12,7 +12,7 @@
   <div class="chatroom-header">
     <h3 class="chatroom-name">{{landing.currentRoom.name}}</h3>
   </div>
-  <div class="chatroom-messages" ng-repeat="message in landing.currentRoomMessages">
+  <div class="chatroom-messages" ng-repeat="message in landing.currentRoomMessages" ng-class="{otherline: $index === 1}">
     <p class="chatroom-username" >{{message.username}}:</p>
     <p class="chatroom-content" >{{message.content }}</p>
     <p class="chatroom-time">{{message.sentAt | date: "shortTime" }}</p>
