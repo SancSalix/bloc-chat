@@ -1,5 +1,5 @@
 (function() {
-  function LandingCtrl($rootScope, $scope, Room, $uibModal) {
+  function LandingCtrl($rootScope, $scope, Room, Message, $uibModal) {
     this.rooms = Room.all;
 
     this.open = function() {
@@ -23,9 +23,13 @@
       this.currentRoomMessages = Room.getMessagesById(this.currentRoom.$id);
     }
 
+    this.sendMessage = function(message) {
+      Message.send(message, this.currentRoom.$id);
+    }
+
   }
 
   angular
     .module('blocChat')
-    .controller('LandingCtrl', ['$rootScope', '$scope', 'Room', '$uibModal', LandingCtrl]);
+    .controller('LandingCtrl', ['$rootScope', '$scope', 'Room', 'Message', '$uibModal', LandingCtrl]);
 })();

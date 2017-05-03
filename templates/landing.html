@@ -15,6 +15,10 @@
   <div class="chatroom-messages" ng-repeat="message in landing.currentRoomMessages">
     <p class="chatroom-username" >{{message.username}}:</p>
     <p class="chatroom-content" >{{message.content }}</p>
-    <p class="chatroom-time">{{message.sentAt}}</p>
+    <p class="chatroom-time">{{message.sentAt | date: "shortTime" }}</p>
+  </div>
+  <div class="chatroom-send" ng-show="landing.currentRoom !== null">
+    <textarea placeholder="Send message ..." name="entryfield" rows="1" cols="100" ng-model="text"> </textarea>
+    <button class="button send" type="button" ng-click="landing.sendMessage(text); entryfield.$setPristine() ;  text = ' ' ">Send</button>
   </div>
 </section>

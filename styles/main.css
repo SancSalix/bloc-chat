@@ -82,6 +82,24 @@ p {
   font-size: 45%;
 }
 
+.chatroom-send {
+  position:fixed;
+  bottom: 0;
+  z-index: 6;
+  display: inline;
+  color: grey;
+}
+
+button {
+  border: none;
+  text-decoration: none;
+  background-color: #009999;
+  color: white;
+  opacity: 1;
+  float: right;
+  display: inline;
+}
+
 @media (min-width: 640px) {
   html {
     font-size: 112%;
