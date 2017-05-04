@@ -5,12 +5,11 @@
     this.open = function() {
       $rootScope.modalInstance = $uibModal.open({
         animation: true,
-        ariaLabelledBy: 'modal-title',
+        ariaLabelledBy: 'modal-header',
         ariaDescribedBy: 'modal-body',
         templateUrl: 'templates/modal.html',
         controller: 'ModalCtrl',
         controllerAs: 'modal',
-        size: 'modal-sm',
         scope: $scope
       });
     };

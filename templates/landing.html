@@ -1,24 +1,30 @@
-<section class="sidebar">
-  <div class="sidebar-header">
-  <h1>Bloc Chat</h1>
+<div class="container-fluid">
+  <div class="sidebar-container row">
+    <div class="sidebar col-sm-2">
+      <h1 class="sidebar-header">Bloc Chat</h1>
+      <div class="sidebar-nav" ng-repeat="room in landing.rooms">
+        <h2 class="roomName" ng-click="landing.selectedRoom(room)">{{ room.name }}</h2>
+      </div>
+      <button class="create-room btn" ng-click="landing.open()">
+        <span class="glyphicon glyphicon-plus-sign"></span>Create Room
+      </button>
+    </div>
+    <div class="chatroom col-sm-10">
+      <h3 class="chatroom-header">{{landing.currentRoom.name}}</h3>
+        <table class="chatroom-messages table table-striped" ng-repeat="message in landing.currentRoomMessages">
+          <tbody>
+          <tr>
+          <td class="chatroom-username">{{message.username}}:</td>
+          <td class="chatroom-content">{{message.content }}</td>
+          <td class="chatroom-time"><sub>{{message.sentAt | date: "shortTime" }}</sub></td>
+        </tr>
+      </tbody>
+      </table>
+      <div class="chatroom-send input-group" ng-show="landing.currentRoom !== null">
+        <textarea class="form-control" placeholder="Send message ..." name="entryfield" rows="1" cols="100" ng-model="text"> </textarea>
+        <span class="input-group-btn">
+          <button class="button-send btn btn-default" type="button" ng-click="landing.sendMessage(text); entryfield.$setPristine() ;  text = ' ' ">Send</button>
+      </span>
+      </div>
+    </div>
   </div>
-  <div class="sidebar-nav" ng-repeat="room in landing.rooms">
-    <h2 class="roomName" ng-click="landing.selectedRoom(room)">{{ room.name }}</h2>
-  </div>
-  <button class="modal" ng-click="landing.open()">Create Room</button>
-</section>
-
-<section class="chatroom">
-  <div class="chatroom-header">
-    <h3 class="chatroom-name">{{landing.currentRoom.name}}</h3>
-  </div>
-  <div class="chatroom-messages" ng-repeat="message in landing.currentRoomMessages" ng-class="{otherline: $index === 1}">
-    <p class="chatroom-username" >{{message.username}}:</p>
-    <p class="chatroom-content" >{{message.content }}</p>
-    <p class="chatroom-time">{{message.sentAt | date: "shortTime" }}</p>
-  </div>
-  <div class="chatroom-send" ng-show="landing.currentRoom !== null">
-    <textarea placeholder="Send message ..." name="entryfield" rows="1" cols="100" ng-model="text"> </textarea>
-    <button class="button send" type="button" ng-click="landing.sendMessage(text); entryfield.$setPristine() ;  text = ' ' ">Send</button>
-  </div>
-</section>

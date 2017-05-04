@@ -1,14 +1,14 @@
-<section class="user-container">
-    <div class="user-header">
-        <h3 class="user-body text-center">Create new user</h3>
+<div class="newUser modal-dialog modal-content">
+  <div class="user-header modal-header">
+    <h3 class="user-body text-center">Create new user</h3>
+  </div>
+  <div class="user-body modal-body">
+    <div class="form-group modal-input">
+      <label for="newUserName">Enter a user name</label>
+      <input id="newUserName" type="text" ng-model="name">
     </div>
-    <div class="user-body">
-        <div class="form-group modal-input">
-            <label for="newUserName">Enter a user name</label>
-            <input id="newUserName" type="text" ng-model="name">
-        </div>
-    </div>
-    <div class="user-footer">
-        <button class="user-create" type="button" ng-click="newUser(name)">Submit</button>
-    </div>
-</section>
+  </div>
+  <div class="user-footer modal-footer">
+    <button class="user-create btn" type="button" ng-click="newUser(name)">Submit</button>
+  </div>
+</div>

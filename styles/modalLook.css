@@ -1,23 +1,14 @@
-.modal-container {
-  position: absolute;
-  z-index: -2;
-  background-color: #006666;
-  color: white;
-  width: 20%;
+.modal-dialog {
+  width: 300px;
+  margin: 30px auto;
   text-align: center;
-  margin-left: 30%;
-  margin-top: 75px;
-  top: 100px;
-}
-
-.modal-body {
-  position: relative;
-  display: inline-block;
-}
-
-button {
-  border: none;
-  text-decoration: none;
-  background-color: #009999;
   color: white;
+}
+
+.modal-content {
+  background-color: #006666;
+}
+
+.btn {
+  background-color: #009999;
 }

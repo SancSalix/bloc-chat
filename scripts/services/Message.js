@@ -10,7 +10,6 @@
         return allMessages.orderByChild("roomId").equalTo(activeRoomId);
       },
       send: function (newMessage, activeRoomId) {
-        console.log(currentTime);
         messages.$add({
           content: newMessage,
           roomId: activeRoomId,

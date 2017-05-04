@@ -1,17 +1,93 @@
-*, *::before, *::after {
+::before, *::after {
   -mox-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+
+html, body, .container-fluid, .sidebar-container {
+    height:100%;
+}
+
+.sidebar {
+  background-color: #006666;
+  color: white;
+  height: 100%;
+}
+
+.sidebar-title {
+  font-weight: bold;
+  float: right;
+  padding: 10px;
+}
+
+.sidebar-nav {
+  background-color: #009999;
+}
+
+.roomName {
+  font-size: 150%;
+  text-align: center;
+}
+
+.btn {
+  background-color: #009999;
+  color: white;
+}
+
+.create-room {
+  float: left;
+  margin-top: 35px;
+}
+
+.glyphicon {
+  padding: 1px;
+}
+
+.chatroom-header {
+  color: white;
+  background-color: #009999;
+  text-align: center;
+}
+
+.chatroom-messages {
+  padding: 0px;
+  border: 0px;
+  margin: 0px;
+}
+
+.chatroom-username {
+  font-weight: bold;
+  text-align: left;
+}
+
+.chatroom-content {
+  text-align: left;
+}
+
+.chatroom-time {
+  text-align: right;
+}
+
+@media (min-width: 640px) {
+  html {
+    font-size: 112%;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 120%;
+  }
+}
+
+/**, *
 
 html {
   width: 100%;
 }
 
 .sidebar {
-  width: 20%;
-  background-color: #006666;
-  color: white;
+
   height: 100%;
   position: fixed;
   z-index: 0;
@@ -54,7 +130,6 @@ html {
 }
 
 .chatroom {
-  width: 80%;
   float: right;
   text-align: left;
   color: #4c4949;
@@ -104,14 +179,5 @@ button {
   display: inline;
 }
 
-@media (min-width: 640px) {
-  html {
-    font-size: 112%;
-  }
-}
 
-@media (min-width: 1024px) {
-  html {
-    font-size: 120%;
-  }
-}
+*/
