@@ -7,11 +7,17 @@
         ariaLabelledBy: 'modal-header',
         ariaDescribedBy: 'modal-body',
         templateUrl: 'templates/user.html',
+        backdrop: 'static',
+        keyboard: false,
         size: 'modal-sm',
         controller: function($scope, $uibModalInstance) {
           $scope.newUser = function(name) {
-            $uibModalInstance.close();
-            $cookies.put('blocChatCurrentUser', name);
+            if (name.length > 4) {
+              $uibModalInstance.close();
+              $cookies.put('blocChatCurrentUser', name);
+            } else {
+              alert("Please enter a valid name");
+            }
           }
         }
       });
