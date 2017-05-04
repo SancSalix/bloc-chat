@@ -21,3 +21,14 @@ button {
   background-color: #009999;
   color: white;
 }
+
+.user-error {
+  color:black;
+  position: absolute;
+  z-index: 8;
+  background-color: red;
+  margin-left: 30%;
+  margin-top: 75px;
+  top: 100px;
+
+}

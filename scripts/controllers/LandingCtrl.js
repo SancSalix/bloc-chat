@@ -9,7 +9,7 @@
         ariaDescribedBy: 'modal-body',
         templateUrl: 'templates/modal.html',
         controller: 'ModalCtrl',
-        controllerAs: 'modal',
+        controllerAs: 'modal',        
         size: 'modal-sm',
         scope: $scope
       });
