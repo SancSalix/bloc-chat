@@ -1,4 +1,4 @@
-<div class="newUser modal-dialog modal-content">
+<div class="newUser modal-dialog">
   <div class="user-header modal-header">
     <h3 class="user-body text-center">Create new user</h3>
   </div>
@@ -6,6 +6,7 @@
     <div class="form-group modal-input">
       <label for="newUserName">Enter a user name</label>
       <input id="newUserName" type="text" ng-model="name">
+      <p class="user-error" ng-show="name.length < 4">Please enter a name longer than 4 characters</p>
     </div>
   </div>
   <div class="user-footer modal-footer">

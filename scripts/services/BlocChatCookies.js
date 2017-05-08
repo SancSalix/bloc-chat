@@ -16,7 +16,7 @@
               $uibModalInstance.close();
               $cookies.put('blocChatCurrentUser', name);
             } else {
-              alert("Please enter a valid name");
+              alert("Please enter a valid name longer than 4 characters");
             }
           }
         }

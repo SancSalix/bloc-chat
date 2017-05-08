@@ -21,3 +21,7 @@ input {
 .room-cancel {
   background-color: #74a5a5;
 }
+
+.user-error {
+  font-size: 12px;
+}
