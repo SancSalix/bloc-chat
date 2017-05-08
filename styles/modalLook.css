@@ -10,7 +10,7 @@
   max-height: 50%;
 }
 
-.btn {
+.room-create, .user-create {
   background-color: #009999;
 }
 

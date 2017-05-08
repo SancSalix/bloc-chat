@@ -2,8 +2,13 @@
   function ModalCtrl($rootScope, $uibModal, $scope, $uibModalInstance, Room) {
 
     this.create = function(input) {
-      Room.addRoom(input);
-      $uibModalInstance.close();
+      input = input.trim();
+      if(input !== undefined && input !== "") {
+        Room.addRoom(input);
+        $uibModalInstance.close();
+      } else {
+        alert("Please enter a valid room name");
+      }
     };
 
     this.cancel = function() {
