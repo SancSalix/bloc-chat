@@ -7,6 +7,7 @@
 
 .modal-content {
   background-color: #006666;
+  max-height: 50%;
 }
 
 .btn {
@@ -15,4 +16,8 @@
 
 input {
   color: black;
+}
+
+.room-cancel {
+  background-color: #74a5a5;
 }

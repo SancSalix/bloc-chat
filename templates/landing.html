@@ -9,7 +9,7 @@
         <span class="glyphicon glyphicon-plus-sign"></span>Create Room
       </button>
     </div>
-    <div class="chatroom col-sm-10">
+    <div class="chatroom col-sm-10" ng-show="landing.currentRoom !== null">
       <h3 class="chatroom-header">{{landing.currentRoom.name}}</h3>
         <table class="chatroom-messages table table-striped" ng-repeat="message in landing.currentRoomMessages">
           <tbody>
@@ -20,7 +20,7 @@
         </tr>
       </tbody>
       </table>
-      <div class="chatroom-send input-group" ng-show="landing.currentRoom !== null">
+      <div class="chatroom-send input-group">
         <textarea class="form-control" placeholder="Send message ..." name="entryfield" rows="1" cols="100" ng-model="text"> </textarea>
         <span class="input-group-btn">
           <button class="button-send btn btn-default" type="button" ng-click="landing.sendMessage(text); entryfield.$setPristine() ;  text = ' ' ">Send</button>

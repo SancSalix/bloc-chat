@@ -47,6 +47,7 @@ html, body, .container-fluid, .sidebar-container {
   color: white;
   background-color: #009999;
   text-align: center;
+  padding: 10px;
 }
 
 .chatroom-messages {
