@@ -5,7 +5,6 @@
              enabled: true,
              requireBase: false
          });
-         
        $stateProvider
          .state('landing', {
              url: '/',
@@ -23,6 +22,7 @@
              templateUrl: '/templates/collection.html'
          });
      }
+ 
 
      angular
          .module('blocJams', ['ui.router'])
