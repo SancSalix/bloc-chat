@@ -1,111 +1,81 @@
-*,
-*::before,
-*::after {
+::before, *::after {
   -mox-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-html {
-  height: 100%;
-  font-size: 100%
+html, body, .container-fluid, .sidebar-container {
+    height:100%;
 }
 
- body {
-     background-image: url(../assets/images/blurred_backgrounds/blur_bg_3.jpg);
-     background-repeat: no-repeat;
-     background-attachment: fixed;
-     background-position: center center;
-     background-size: cover;
-     font-family: 'Open Sans';
-     color: white;
-     min-height: 100%;
-     padding-bottom: 200px;
- }
-
-.navbar {
-  position: relative;
-  padding: .5rem;
-  background-color: rgba(192, 192, 192, 0.05);
-  z-index: 1;
-}
-
-.navbar .logo {
-  position: relative;
-  left: 2rem;
-  cursor: pointer;
-}
-
-.navbar .links-container {
-  display: table;
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100px;
+.sidebar {
+  background-color: #006666;
   color: white;
-  text-decoration: none;
-}
-
-.links-container .navbar-link {
-  display: table-cell;
-  position: relative;
   height: 100%;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  vertical-align: middle;
+}
+
+.sidebar-title {
+  font-weight: bold;
+  float: right;
+  padding: 10px;
+}
+
+.sidebar-nav {
+  background-color: #009999;
+}
+
+.roomName {
+  font-size: 150%;
+  text-align: center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.button-send {
+  background-color: #009999;
   color: white;
-  font-size: .625rem;
-  letter-spacing: .05rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-decoration: none;
-  cursor: pointer;
 }
 
-.links-container .navbar-link:hover {
-  color: red;
+.create-room {
+  float: left;
+  margin-top: 35px;
+  background-color: #74a5a5;
+  color: white;
 }
 
-.links-container .navbar-link:active {
-  color: red;
-  background-color: white;
+.glyphicon {
+  padding: 1px;
 }
 
-.container {
-  margin: 0 auto;
-  max-width: 64rem;
+.chatroom-header {
+  color: white;
+  background-color: #009999;
+  text-align: center;
+  padding: 10px;
 }
 
-.container.narrow {
-  max-width: 56rem;
+.chatroom-messages {
+  padding: 0px;
+  border: 0px;
+  margin: 0px;
+}
+
+.chatroom-username {
+  font-weight: bold;
+  text-align: left;
+}
+
+.chatroom-content {
+  text-align: left;
+}
+
+.chatroom-time {
+  text-align: right;
 }
 
 @media (min-width: 640px) {
   html {
     font-size: 112%;
-  }
-  .column {
-    float: left;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  .column.full {
-    width: 100%;
-  }
-  .column.two-thirds {
-    width: 66.7%;
-  }
-  .column.half {
-    width: 50%;
-  }
-  .column.third {
-    width: 33.3%;
-  }
-  .column.fourth {
-    width: 25%;
-  }
-  .column.flow-opposite {
-    float: right;
   }
 }
 
@@ -115,12 +85,104 @@ html {
   }
 }
 
-.clearfix::before,
-.clearfix::after {
-  content: " ";
-  display: table;
+/**, *
+
+html {
+  width: 100%;
 }
 
-.clearfix::after {
-  clear: both;
+.sidebar {
+
+  height: 100%;
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
 }
+
+.sidebar-header {
+  position: fixed;
+  z-index: 0;
+  color: white;
+}
+
+.sidebar-nav {
+  top: 75px;
+  right: 15px;
+  z-index: 3;
+  position: relative;
+  color: white;
+  font-size: 75%;
+  text-align: right;
+
+}
+
+.roomName {
+  display: block;
+}
+
+.modal {
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  z-index: 6;
+  background-color: #009999;
+  color: white;
+  bottom: -150px;
+}
+
+.chatroom {
+  float: right;
+  text-align: left;
+  color: #4c4949;
+  position: relative;
+  z-index: 6;
+}
+
+.chatroom-name {
+  color: #009999;
+}
+
+p {
+  top: -20px;
+  padding: 5px;
+  display: inline;
+}
+
+.chatroom-username {
+  color: #009999;
+}
+
+.chatroom-time {
+  font-style: italic;
+  text-align: right;
+  font-size: 45%;
+}
+
+.chatroom-send {
+  position:fixed;
+  bottom: 0;
+  z-index: 6;
+  display: inline;
+  color: grey;
+}
+
+.otherline {
+  background-color: #d2f4f4;
+}
+
+button {
+  border: none;
+  text-decoration: none;
+  background-color: #009999;
+  color: white;
+  opacity: 1;
+  float: right;
+  display: inline;
+}
+
+
+*/

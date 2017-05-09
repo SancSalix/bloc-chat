@@ -1,0 +1,27 @@
+.modal-dialog {
+  width: 300px;
+  margin: 30px auto;
+  text-align: center;
+  color: white;
+}
+
+.modal-content {
+  background-color: #006666;
+  max-height: 50%;
+}
+
+.room-create, .user-create {
+  background-color: #009999;
+}
+
+input {
+  color: black;
+}
+
+.room-cancel {
+  background-color: #74a5a5;
+}
+
+.user-error {
+  font-size: 12px;
+}
