@@ -3,11 +3,11 @@
 
     this.create = function(input) {
       input = input.trim();
-      if(input !== undefined || input !== "" || input !== null) {
+      if(input.length > 3) {
         Room.addRoom(input);
         $uibModalInstance.close();
       } else {
-        alert("Please enter a valid room name");
+        alert("Please enter a valid room name of 4 or more characters");
       }
     };
 

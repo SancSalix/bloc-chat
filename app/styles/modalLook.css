@@ -25,3 +25,7 @@ input {
 .user-error {
   font-size: 12px;
 }
+
+.roomForm.ng-invalid {
+  border-color: red;
+}

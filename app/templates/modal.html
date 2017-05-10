@@ -5,7 +5,8 @@
       <div class="room-body modal-body">
         <div class="form-group room-input">
           <label for="newRoomName">Enter a room name</label>
-          <input id="newRoomName" type="text" ng-model="name">
+          <input id="newRoomName" type="text" name="roomForm" ng-model="name">
+          <p class="user-error" ng-show="name.length < 3">Please enter a room name longer than 3 characters</p>
         </div>
       </div>
       <div class="room-footer modal-footer">
