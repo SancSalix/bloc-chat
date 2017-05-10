@@ -3,7 +3,7 @@
 
     this.create = function(input) {
       input = input.trim();
-      if(input !== undefined && input !== "") {
+      if(input !== undefined || input !== "" || input !== null) {
         Room.addRoom(input);
         $uibModalInstance.close();
       } else {

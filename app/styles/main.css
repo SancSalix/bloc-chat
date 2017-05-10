@@ -37,8 +37,8 @@ html, body, .container-fluid, .sidebar-container {
 }
 
 .create-room {
-  float: left;
-  margin-top: 35px;
+  display: block;
+  margin: auto;
   background-color: #74a5a5;
   color: white;
 }
