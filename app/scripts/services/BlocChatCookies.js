@@ -12,7 +12,7 @@
         size: 'modal-sm',
         controller: function($scope, $uibModalInstance) {
           $scope.newUser = function(name) {
-            if (name.length > 4) {
+            if (name.length > 4 && name !== undefined) {
               $uibModalInstance.close();
               $cookies.put('blocChatCurrentUser', name);
             } else {
