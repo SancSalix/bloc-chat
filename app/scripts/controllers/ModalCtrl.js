@@ -2,7 +2,9 @@
   function ModalCtrl($rootScope, $uibModal, $scope, $uibModalInstance, Room) {
 
     this.create = function(input) {
-      alert("Firing this Shelby");
+      if(input == undefined) {
+        alert("Please enter a name");
+      }
       input = input.trim();
       if(input.length > 3) {
         Room.addRoom(input);
