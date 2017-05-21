@@ -4,15 +4,21 @@
     var rooms = $firebaseArray(ref);
 
     var messageRef = firebase.database().ref().child("messages");
+    var userDatabase = firebase.database().ref().child("userID");
+    var userRef = $firebaseArray(userDatabase);
 
     return {
       all: rooms,
-      addRoom: function(input) {
-        rooms.$add({ name: input });
+      addRoom: function(input, names) {
+        rooms.$add({
+          name: input,
+          userList: names
+        });
       },
-      getMessagesById: function(activeRoomId){
-                return $firebaseArray(messageRef.orderByChild("roomId").equalTo(activeRoomId));
-            }
+      userAll: userRef,
+      getMessagesById: function(activeRoomId) {
+        return $firebaseArray(messageRef.orderByChild("roomId").equalTo(activeRoomId));
+      }
     };
   }
 

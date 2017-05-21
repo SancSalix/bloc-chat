@@ -1,16 +1,41 @@
-  <div class="newRoom row modal-dialog">
-      <div class="room-header modal-header">
-        <h3 class="room-body text-center">Create new room</h3>
-      </div>
-      <div class="room-body modal-body">
-        <div class="form-group room-input">
-          <label for="newRoomName">Enter a room name</label>
-          <input id="newRoomName" type="text" name="roomForm" ng-model="name">
-          <p class="user-error" ng-show="name.length < 3">Please enter a room name longer than 3 characters</p>
-        </div>
-      </div>
-      <div class="room-footer modal-footer">
-        <button class="btn room-cancel" type="button" ng-click="$dismiss()">Cancel</button>
-        <button class="btn room-create" type="button" ng-click="modal.create(name)">Create Room</button>
-      </div>
+<div class="newRoom row modal-dialog" ng-hide="private">
+  <div class="room-header modal-header">
+    <h3 class="room-body text-center">Create new public room</h3>
   </div>
+  <div class="room-body modal-body">
+    <div class="form-group room-input">
+      <label for="newRoomName">Enter a room name</label>
+      <input id="newRoomName" type="text" name="roomForm" ng-model="name">
+      <p class="user-error" ng-show="name.length < 3">Please enter a room name longer than 3 characters</p>
+    </div>
+
+  </div>
+  <div class="room-footer modal-footer">
+    <button class="btn room-private" type="button" ng-click="private = true">Public</button>
+    <button class="btn room-cancel" type="button" ng-click="$dismiss()">Cancel</button>
+    <button class="btn room-create" type="button" ng-click="modal.create(name, false)">Create Room</button>
+  </div>
+</div>
+
+<div class="newRoom row modal-dialog" ng-show="private">
+  <div class="room-header modal-header">
+    <h3 class="room-body text-center">Create new private room</h3>
+  </div>
+  <div class="room-body modal-body">
+    <div class="form-group room-input">
+      <label for="newRoomName">Enter a room name</label>
+      <input id="newRoomName" type="text" name="roomForm" ng-model="name">
+      <p class="user-error" ng-show="name.length < 3">Please enter a room name longer than 3 characters</p>
+      <br>
+      <label for="private-list">Users Allowed (hold ctrl/shift to select more than one)</label>
+      <select multiple ng-model="selected" class="form-control private-list" ng-options="choice as choice.name for choice in modal.userListing">
+      </select>
+    </div>
+
+  </div>
+  <div class="room-footer modal-footer">
+    <button class="btn room-private" type="button" ng-click="private = false">Private</button>
+    <button class="btn room-cancel" type="button" ng-click="$dismiss()">Cancel</button>
+    <button class="btn room-create" type="button" ng-click="modal.createPrivate(selected, name)">Create Room</button>
+  </div>
+</div>
