@@ -10,8 +10,17 @@
   max-height: 50%;
 }
 
-.room-create, .user-create {
+.room-create, .user-login, .user-register {
   background-color: #009999;
+}
+
+.user-create, .user-switch {
+  float: left;
+  background-color: #74a5a5;
+}
+
+.private-list {
+  color: black;
 }
 
 input {
