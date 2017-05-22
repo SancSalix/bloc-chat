@@ -36,7 +36,6 @@
             }
             if (requirementsMet == true) {
               $cookies.put('blocChatCurrentUser', newName);
-              alert(newName);
               firebase.auth().createUserWithEmailAndPassword(newEmail, newPassword).then(function() {
                   userAuth = firebase.auth().currentUser;
                   userAuth.updateProfile({

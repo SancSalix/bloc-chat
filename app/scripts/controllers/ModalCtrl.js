@@ -4,6 +4,9 @@
     var allowedNames = [];
 
     this.create = function(input, selected) {
+      if(input == undefined) {
+        alert("Please enter a name");
+      }
       input = input.trim();
       if(input.length > 3) {
         Room.addRoom(input, selected);
