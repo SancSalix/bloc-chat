@@ -1,3 +1,7 @@
+.modal-header {
+  padding-bottom: 35px;
+}
+
 .modal-dialog {
   width: 300px;
   margin: 30px auto;
@@ -12,6 +16,10 @@
 
 .room-create, .user-login, .user-register {
   background-color: #009999;
+}
+
+.room-private {
+  background-color: #274949;
 }
 
 .user-create, .user-switch {
